@@ -25,23 +25,23 @@ Mai jos se regăsește o captură a interfeței Streamlit pentru monitorizarea i
 
 ![Dashboard SOC](dashboard.png)
 
-## Raportare (Exemplu PDF)
+ Raportare (Exemplu PDF)
 
 Documentul generat automat pentru management și audit:
 
 ![Raport Incident](raport_poza.png)
 
----
 
-## Stack Tehnologic
-* **Limbaj:** Python 3
-* **OS:** Linux (testat pe medii Debian/Kali)
-* **Librării:** `pandas`, `streamlit` (UI), `requests` (API Call), `fpdf` (Generare Rapoarte), `hashlib` (Criptografie).
 
-## Instrucțiuni de Utilizare
+ Stack Tehnologic
+  1)Limbaj: Python 3
+  2)OS: Linux (testat pe medii Debian/Kali)
+  3)Librării: `pandas`, `streamlit` (UI), `requests` (API Call), `fpdf` (Generare Rapoarte), `hashlib` (Criptografie).
+
+ Instrucțiuni de Utilizare
 
 1. Clonarea repository-ului și instalarea cerințelor:
-```bash
-git clone [https://github.com/](https://github.com/)[NUMELE_TAU_DE_UTILIZATOR]/SOAR-GRC-Automator.git
+bash
+git clone [https://github.com/](https://github.com/)[DanAndGvr]/SOAR-GRC-Automator.git
 cd SOAR-GRC-Automator
 pip3 install -r requirements.txt
