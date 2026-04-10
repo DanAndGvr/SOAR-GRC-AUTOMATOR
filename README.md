@@ -2,7 +2,7 @@
 
 Acest proiect este un sistem de tip SOAR (Security Orchestration, Automation, and Response) dezvoltat în Python. Rolul principal al aplicației este de a monitoriza jurnalele de sistem Linux în timp real, de a bloca automat atacurile de tip Brute Force și de a genera rapoarte de incident care respectă cerințele de audit GRC.
 
-## Arhitectura Sistemului (Cei 4 Piloni)
+## Arhitectura Sistemului 
 
 Sistemul este construit pe o arhitectură modulară, acoperind întregul ciclu de viață al unui incident de securitate:
 
