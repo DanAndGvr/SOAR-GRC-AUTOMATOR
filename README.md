@@ -1,47 +1,37 @@
-  SOAR & GRC Automation Tool
+# SOAR & GRC Automation Tool
 
 Acest proiect este un sistem de tip SOAR (Security Orchestration, Automation, and Response) dezvoltat în Python. Rolul principal al aplicației este de a monitoriza jurnalele de sistem Linux în timp real, de a bloca automat atacurile de tip Brute Force și de a genera rapoarte de incident care respectă cerințele de audit GRC.
 
-Sistemul este împărțit în două componente principale: un daemon de monitorizare/remediere (Backend) și un dashboard interactiv pentru vizualizare (Frontend).
+## Componente și Flux de Lucru (Vizualizare Sistem)
 
- Funcționalități Principale
+Pentru a oferi o imagine clară asupra funcționalității sistemului în producție, mai jos sunt documentate etapele de detecție, monitorizare și raportare.
 
-1)Detecție în timp real (SOC): Analizarea fișierului `/var/log/auth.log` utilizând expresii regulate (Regex) pentru identificarea încercărilor eșuate de autentificare prin SSH.
-2)Remediere Automată (SOAR): Izolarea atacatorilor la atingerea pragului de 5 încercări eșuate prin aplicarea automată de reguli DROP în IPTables.
-3)Threat Intelligence: Geolocalizarea adreselor IP publice (via ip-api) pentru identificarea sursei atacului. Logica include fallback pentru IP-uri din clase private (RFC 1918).
-4)Audit și GRC: Generarea automată a unui raport de incident în format PDF.
-5)Chain of Custody: Integrarea unei semnături digitale (Hash SHA-256) pe datele brute ale atacului pentru a garanta integritatea logurilor în fața auditorilor.
+### 1. Engine-ul de Detecție și Remediere (Backend)
+![Terminal SOAR Backend](backend_terminal.png)
 
- Alinierea la Standarde (Conformitate)
-Proiectul a fost mapat pe următoarele standarde de securitate:
-1)NIS2 (Art. 21):  Răspuns automatizat la incidente și managementul riscului.
-2)ISO/IEC 27001 (A.9.1.1):  Controlul accesului și restricționarea rețelelor.
+*Inițializarea daemon-ului de securitate în terminalul serverului. Sistemul monitorizează stream-ul de loguri pentru anomalii de autentificare.*
+
+### 2. Centrul de Comandă Vizual și Tabelul GRC
+![Dashboard Complet](Dashboard.png)
+
+*Interfața interactivă dezvoltată în Streamlit. Include o hartă globală populată în timp real și tabelul detaliat al incidentelor izolate, mapate pe ISO 27001.*
+
+### 3. Raportare Executivă și Forensics
+📄 **[Vezi Exemplul de Raport PDF Generat Automat Aici](Raport_Incident_192_168_1_135.pdf)**
+
+*Raportul oficial de incident (PDF) conține detaliile tehnice ale atacului și lanțul de custodie (semnătura digitală SHA-256).*
 
 ---
 
-   Interfața Grafică (Dashboard)
+## Stack Tehnologic
+* **Limbaj:** Python 3
+* **OS:** Linux (testat pe medii Debian/Kali)
+* **Librării:** `pandas`, `streamlit`, `requests`, `fpdf`, `hashlib`.
 
-Mai jos se regăsește o captură a interfeței Streamlit pentru monitorizarea incidentelor:
-
-![Dashboard SOC](dashboard.png)
-
- Raportare (Exemplu PDF)
-
-Documentul generat automat pentru management și audit:
-
-![Raport Incident](raport_poza.png)
-
-
-
- Stack Tehnologic
-  1)Limbaj: Python 3
-  2)OS: Linux (testat pe medii Debian/Kali)
-  3)Librării: `pandas`, `streamlit` (UI), `requests` (API Call), `fpdf` (Generare Rapoarte), `hashlib` (Criptografie).
-
- Instrucțiuni de Utilizare
+## Instrucțiuni de Utilizare
 
 1. Clonarea repository-ului și instalarea cerințelor:
-bash
-git clone [https://github.com/](https://github.com/)[DanAndGvr]/SOAR-GRC-Automator.git
+```bash
+git clone https://github.com/DanAndGvr/SOAR-GRC-Automator.git
 cd SOAR-GRC-Automator
-pip3 install -r requirements.txt
+pip3 install pandas streamlit requests fpdf
