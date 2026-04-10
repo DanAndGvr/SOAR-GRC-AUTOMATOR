@@ -23,7 +23,7 @@ Proiectul a fost mapat pe următoarele standarde de securitate:
 
 Mai jos se regăsește o captură a interfeței Streamlit pentru monitorizarea incidentelor:
 
-![Dashboard SOC](dashboard_poza.png)
+![Dashboard SOC](dashboard.png)
 
 ## Raportare (Exemplu PDF)
 
