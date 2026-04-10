@@ -49,14 +49,14 @@ Sistemul aplică măsuri tehnice care ajută la alinierea cu cerințele legislat
 
 ## Instrucțiuni de Utilizare
 
-1. Clonarea repository-ului și instalarea cerințelor:
+* 1.Clonarea repository-ului și instalarea cerințelor:
 ```bash
 git clone [https://github.com/DanAndGvr/SOAR-GRC-Automator.git](https://github.com/DanAndGvr/SOAR-GRC-Automator.git)
 cd SOAR-GRC-Automator
 pip3 install pandas streamlit requests fpdf
 
 ```
-* **2.Rularea engine-ului principal (necesită privilegii root):
+* 2.Rularea engine-ului principal (necesită privilegii root):
   sudo python3 soar_bot.py
-* **3.Pornirea interfeței web (într-un terminal separat):
+* 3.Pornirea interfeței web (într-un terminal separat):
   streamlit run dashboard.py
