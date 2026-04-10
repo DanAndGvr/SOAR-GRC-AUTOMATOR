@@ -56,7 +56,7 @@ cd SOAR-GRC-Automator
 pip3 install pandas streamlit requests fpdf
 
 ```
-2.Rularea engine-ului principal (necesită privilegii root):
+* **2.Rularea engine-ului principal (necesită privilegii root):
   sudo python3 soar_bot.py
-3.Pornirea interfeței web (într-un terminal separat):
+* **3.Pornirea interfeței web (într-un terminal separat):
   streamlit run dashboard.py
